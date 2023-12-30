@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Image Gallery</title>
+    <style>
+        .navbar {
+            background-color: rgba(0, 89, 107, 0.774);
+            border-radius: 4.5px;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: right;
+            list-style: none;
+            padding: 5px 30px;
+            margin: 3.5px;
+        }
+
+        .h1 {
+            color: mediumvioletred;
+            display: inline-block;
+            position: relative;
+            border: 5px solid rgba(2, 39, 9, 0.738);
+            white-space: nowrap;
+            border-width: 4.5px;
+            border-style: groove;
+            left: 37.5%
+        }
+
+        .navbar button {
+            font-size: larger;
+            cursor: pointer;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        div img {
+            width: 400px;
+            height: 400px;
+            border-radius: 5px;
+            box-shadow: 4px 7px 7px 0px rgb(1, 60, 1);
+            margin: 10px;
+            margin-left: 50px;
+            cursor: pointer;
+            transition: 800ms;
+        }
+
+        div img:hover {
+            transform: scale(1.1);
+        }
+
+        .clock {
+            width: 800px;
+            position: absolute;
+            left: 30px;
+            color: darkgreen;
+        }
+
+        .clock span {
+            font-size: 58px;
+            width: 59px;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            font-style: oblique;
+            font-weight: bolder;
+        }
+
+        .clock span::after {
+            font-size: 19px;
+            position: absolute;
+            bottom: -10px;
+            left: 6.5px;
+        }
+
+        #hrs::after {
+            content: 'Hours';
+        }
+
+        #min::after {
+            content: 'Minutes';
+            left: 0.2px;
+        }
+
+        #sec::after {
+            content: 'Seconds';
+            left: 0.2px;
+        }
+
+        footer {
+            font-size: 50px;
+            border: 5px solid rgba(2, 39, 9, 0.738);
+            border-radius: 5px;
+            display: inline-block;
+            color: mediumvioletred;
+        }
+
+        footer li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li> <button onclick="changeTheme()"><b> Change Theme </b> </button> </li>
+            </ul>
+        </nav>
+
+        <script>
+            const body = document.querySelector('body');
+            const button = document.querySelector('button');
+            const colors = ['aquamarine', 'rgba(0, 32, 0, 0.663)', 'pink', 'black', 'yellow', 'rgba(1, 1, 75, 0.598)', 'white'];
+            button.addEventListener('click', function () {
+                const colorIndex = parseInt(Math.random() * colors.length);
+                body.style.backgroundColor = colors[colorIndex];
+            })
+        </script>
+
+        <div class="clock">
+            <span id="hrs"> 00 </span>
+            <span> : </span>
+            <span id="min"> 00 </span>
+            <span> :</span>
+            <span id="sec"> 00 </span>
+        </div>
+
+        <script>
+            let hrs = document.getElementById("hrs");
+            let min = document.getElementById("min");
+            let sec = document.getElementById("sec");
+
+            setInterval(() => {
+                let date = new Date();
+
+                hrs.innerHTML = (date.getHours() < 10 ? "0" : "") + date.getHours();
+                min.innerHTML = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+                sec.innerHTML = (date.getSeconds() < 10 ? "0" : "") + date.getSeconds();
+            }, 1000);
+
+        </script>
+
+        <h1 class="h1"> HOLIDAY DESTINATION </h1>
+        <div>
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Museum of the future.jpeg">
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Burj Khalifa.jpeg">
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Eiffel Tower.jpeg">
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Big Ben.jpeg">
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Lotus Temple.jpeg">
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Tajmahal.jpeg">
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Trading Centre.jpeg">
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/rock tomb.jpeg">
+            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Antilia.jpeg">
+        </div>
+
+        <footer>
+            <ul>
+                <li> This is Created by Sanchita Priyadarshinee</li>
+                <li> Electronics and Communication Engineering </li>
+                <li> 1st Year </li>
+            </ul>
+        </footer>
+
+    </header>
+</body>
+
+</html>
