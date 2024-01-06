@@ -4,10 +4,6 @@
 <head>
     <title> Image Gallery</title>
     <style>
-        body img{
-            background-size: cover;
-        }
-
         .navbar {
             background-color: rgba(0, 89, 107, 0.774);
             border-radius: 4.5px;
@@ -114,9 +110,6 @@
 </head>
 
 <body>
-  
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.peakpx.com%2Fen%2Fhd-wallpaper-desktop-odlho&psig=AOvVaw3qwM-TY6Me0lhBaJmLM7qi&ust=1704597724030000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLitu8Pnx4MDFQAAAAAdAAAAABAQ">
-    </a>
     <header>
         <nav class="navbar">
             <ul>
@@ -127,7 +120,8 @@
         <script>
             const body = document.querySelector('body');
             const button = document.querySelector('button');
-            const colors = ['aquamarine', 'rgba(0, 32, 0, 0.663)', 'pink', 'black', 'yellow', 'rgba(1, 1, 75, 0.598)', 'white'];
+            const colors = ['aquamarine', 'pink', 'black', 'yellow', 'white'];
+
             button.addEventListener('click', function () {
                 const colorIndex = parseInt(Math.random() * colors.length);
                 body.style.backgroundColor = colors[colorIndex];
@@ -159,7 +153,7 @@
 
         <h1 class="h1"> HOLIDAY DESTINATION </h1>
         <div>
-            <img src="/Users/sanchita/Downloads/WebwizImageGallery/Museum of the future.jpeg">
+            <img src="./Images/WebwizImageGallery/Museum of the future.jpeg">
             <img src="./Images/WebwizImageGallery/Burj Khalifa.jpeg">
             <img src="./Images/WebwizImageGallery/Eiffel Tower.jpeg">
             <img src="./Images/WebwizImageGallery/Big Ben.jpeg">
