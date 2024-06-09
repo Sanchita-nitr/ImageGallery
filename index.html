@@ -3,140 +3,112 @@
 
 <head>
     <title> Image Gallery</title>
-    <style>
-        .navbar {
-            background-color: rgba(0, 89, 107, 0.774);
-            border-radius: 4.5px;
-        }
 
-        .navbar ul {
-            overflow: auto;
-        }
-
-        .navbar li {
-            float: right;
-            list-style: none;
-            padding: 5px 30px;
-            margin: 3.5px;
-        }
-
-        .h1 {
-            color: mediumvioletred;
-            display: inline-block;
-            position: relative;
-            border: 5px solid rgba(2, 39, 9, 0.738);
-            white-space: nowrap;
-            border-width: 4.5px;
-            border-style: groove;
-            left: 37.5%
-        }
-
-        .navbar button {
-            font-size: larger;
-            cursor: pointer;
-        }
-
-        div {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        div img {
-            width: 400px;
-            height: 400px;
-            border-radius: 5px;
-            box-shadow: 4px 7px 7px 0px rgb(1, 60, 1);
-            margin: 10px;
-            margin-left: 50px;
-            cursor: pointer;
-            transition: 800ms;
-        }
-
-        div img:hover {
-            transform: scale(1.1);
-        }
-
-        .clock {
-            width: 800px;
-            position: absolute;
-            left: 30px;
-            color: darkgreen;
-        }
-
-        .clock span {
-            font-size: 58px;
-            width: 59px;
-            display: inline-block;
-            text-align: center;
-            position: relative;
-            font-style: oblique;
-            font-weight: bolder;
-        }
-
-        .clock span::after {
-            font-size: 19px;
-            position: absolute;
-            bottom: -10px;
-            left: 6.5px;
-        }
-
-        #hrs::after {
-            content: 'Hours';
-        }
-
-        #min::after {
-            content: 'Minutes';
-            left: 0.2px;
-        }
-
-        #sec::after {
-            content: 'Seconds';
-            left: 0.2px;
-        }
-
-        footer {
-            font-size: 50px;
-            border: 5px solid rgba(2, 39, 9, 0.738);
-            border-radius: 5px;
-            display: inline-block;
-            color: mediumvioletred;
-        }
-
-        footer li {
-            list-style: none;
-        }
-    </style>
+    <link href="./output.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <ul>
-                <li> <button onclick="changeTheme()"><b> Change Theme </b> </button> </li>
-            </ul>
+        <nav class="navbar bg-slate-950 p-5">
+            <div class="lg:absolute clock text-purple-300  lg:text-6xl text-4xl font-bold font-cursive text-center">
+                <span id="hrs"> 00 </span>
+                <span> : </span>
+                <span id="min"> 00 </span>
+                <span> :</span>
+                <span id="sec"> 00 </span>
+            </div>
+            <div class="lg:flex lg:text-right lg:justify-end text-center justify-center lg:pt-0 pt-5 ">
+                <button class="font-bold lg:text-4xl text-3xl border-4 border-purple-300 bg-white  "
+                    onclick="changeTheme()"> Change Theme </button>
+            </div>
         </nav>
+
+        <div>
+            <p class="text-center my-10 text-4xl underline font-serif font-bold"><span
+                    class="text-pink-900">H</span><span class="text-blue-950">O</span><span
+                    class="text-amber-400">L</span><span class="text-green-900">I</span><span class="
+                text-red-800">D</span><span class="text-fuchsia-800">A</span><span class="text-emerald-900">Y </span>
+                <span class="text-lime-600"> D</span><span class="text-yellow-500">E</span><span
+                    class="text-violet-900">S</span><span class="text-rose-800">T</span><span
+                    class="text-teal-700">I</span><span class="text-yellow-900">N</span><span
+                    class="text-slate-800">A</span><span class="text-cyan-800">T</span><span
+                    class="text-pink-600">I</span><span class="text-indigo-900">O</span><span>N</span> </p>
+        </div>
+        <div class=" grid lg:grid-cols-3  lg:gap-3 lg:ml-12 lg:mb-7 justify-center text-center ">
+            <div><a href="https://www.google.co.in/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/Museum%2Bof%2BThe%2BFuture/%4025.2192034,55.2819328,15z/data%3D!4m2!3m1!1s0x0:0x2bfd06ff9c202fc4%3Fsa%3DX%26ved%3D1t:2428%26ictx%3D111&ved=2ahUKEwiqu5TQis-GAxWybmwGHZMOBgQQ_BJ6BAgfEAg&usg=AOvVaw3y5y19eaHDmBpstd0Ucb3f"
+                    target="_blank"><img
+                        class=" mt-12 rounded-3xl box-border border-spacing-x-7 border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Museum of the future.jpeg">
+                    <p class="absolute text-xl font-bold my-4">Museum of the future</p>
+                </a></div>
+            <div><a href="https://www.google.co.in/maps/place/Burj+Khalifa/data=!4m7!3m6!1s0x3e5f43348a67e24b:0xff45e502e1ceb7e2!8m2!3d25.197197!4d55.2743764!16zL20vMDNjbjB2!19sChIJS-JnijRDXz4R4rfO4QLlRf8?authuser=0&hl=en&rclk=1"
+                    target="_blank"><img
+                        class="mt-12 rounded-3xl box-border border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Burj Khalifa.jpeg">
+                    <p class="absolute text-xl font-bold my-4">Burj Khalifa</p>
+                </a></div>
+            <div><a href="https://www.google.co.in/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/Eiffel%2BTower/%4048.8583701,2.2944813,15z/data%3D!4m2!3m1!1s0x0:0x8ddca9ee380ef7e0%3Fsa%3DX%26ved%3D1t:2428%26ictx%3D111&ved=2ahUKEwj0v4nEi8-GAxXza2wGHRG5AYUQ_BJ6BQiLARAI&usg=AOvVaw3Pibh--O3geIML_ulgc01n"
+                    target="_blank"><img
+                        class="mt-12 rounded-3xl box-border border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Eiffel Tower.jpeg">
+                    <p class="absolute text-xl font-bold my-4">Eiffel Tower</p>
+                </a></div>
+            <div><a href="https://maps.app.goo.gl/WPBCKgPVTrU74TqbA" target="_blank"><img
+                        class="mt-12 rounded-3xl box-border border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Big Ben.jpeg">
+                    <p class="absolute text-xl font-bold my-4">Big Ben</p>
+                </a></div>
+            <div><a href="https://maps.app.goo.gl/NXVSCoGvAuPnrVLcA" target="_blank"><img
+                        class="mt-12  rounded-3xl box-border border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Lotus Temple.jpeg">
+                    <p class="absolute text-xl font-bold my-4">Lotus Temple</p>
+                </a></div>
+            <div><a href="https://maps.app.goo.gl/HthZRyN8wpVZsQdJA" target="_blank"><img
+                        class="mt-12 rounded-3xl box-border border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Tajmahal.jpeg ">
+                    <p class="absolute text-xl font-bold my-4">Taj mahal</p>
+                </a></div>
+            <div><a href="https://maps.app.goo.gl/eV8TjxscnQXG98e26" target="_blank"><img
+                        class="mt-12 rounded-3xl box-border border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Statue of Liberty.jpg">
+                    <p class="absolute text-xl font-bold my-4">Statue of Liberty</p>
+                </a></div>
+            <div><a href="https://maps.app.goo.gl/tVPY4Gm9Zp6x4a6R9"><img
+                        class="mt-12 rounded-3xl box-border border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Buckingham.png">
+                    <p class="absolute text-xl font-bold my-4">Buckingham Palace</p>
+                </a></div>
+            <div><a href="https://maps.app.goo.gl/8ZpsPyWba7Pswczd7" target="_blank"><img
+                        class="mt-12 rounded-3xl box-border border-black hover:scale-110 hover:transition lg:size-96 size-72"
+                        src="public/Antilia.png">
+                    <p class="absolute text-xl font-bold my-4">Antilia</p>
+                </a></div>
+        </div>
+
+        <div class="mt-20 mb-5">
+            <p class="lg:absolute lg:ml-40 font-bold text-gray-500 text-xl text-center justify-center">Created by
+                @Sanchita Priyadarshinee</p>
+            <ul class="flex lg:text-right lg:justify-end lg:mx-40 text-center justify-center pt-5">
+                <li class="ml-8"><a href="https://www.instagram.com/sanchita_priyadarshinee/" target="_blank"><img
+                            class="size-10" src="public/instagram.png" alt="instagram"></a></li>
+                <li class="ml-8"><a href="https://x.com/123NITR" target="_blank"><img class="size-10" src="public/x.png"
+                            alt="x"></a></li>
+                <li class="ml-8"><a
+                        href="https://www.linkedin.com/in/sanchita-priyadarshinee-9912b6282/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BLMipRLpGS8K0cKSKhUcUcQ%3D%3D"
+                        target="_blank"><img class="size-10" src="public/Linkedin.png" alt="Linkedin"></a></li>
+            </ul>
+        </div>
 
         <script>
             const body = document.querySelector('body');
             const button = document.querySelector('button');
-            const colors = ['aquamarine', 'pink', 'black', 'yellow', 'white'];
+            const colors = ['aquamarine', 'pink', 'orange', 'green', 'red'];
 
             button.addEventListener('click', function () {
                 const colorIndex = parseInt(Math.random() * colors.length);
                 body.style.backgroundColor = colors[colorIndex];
             })
-        </script>
 
-        <div class="clock">
-            <span id="hrs"> 00 </span>
-            <span> : </span>
-            <span id="min"> 00 </span>
-            <span> :</span>
-            <span id="sec"> 00 </span>
-        </div>
-
-        <script>
             let hrs = document.getElementById("hrs");
             let min = document.getElementById("min");
             let sec = document.getElementById("sec");
@@ -150,27 +122,6 @@
             }, 1000);
 
         </script>
-
-        <h1 class="h1"> HOLIDAY DESTINATION </h1>
-        <div>
-            <img src="./Images/WebwizImageGallery/Museum of the future.jpeg">
-            <img src="./Images/WebwizImageGallery/Burj Khalifa.jpeg">
-            <img src="./Images/WebwizImageGallery/Eiffel Tower.jpeg">
-            <img src="./Images/WebwizImageGallery/Big Ben.jpeg">
-            <img src="./Images/WebwizImageGallery/Lotus Temple.jpeg">
-            <img src="./Images/WebwizImageGallery/Tajmahal.jpeg">
-            <img src="./Images/WebwizImageGallery/Trading Centre.jpeg">
-            <img src="./Images/WebwizImageGallery/rock tomb.jpeg">
-            <img src="./Images/WebwizImageGallery/Antilia.jpeg">
-        </div>
-
-        <footer>
-            <ul>
-                <li> This is Created by Sanchita Priyadarshinee</li>
-                <li> Electronics and Communication Engineering </li>
-                <li> 1st Year </li>
-            </ul>
-        </footer>
 
     </header>
 </body>
